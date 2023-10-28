@@ -82,6 +82,9 @@ class _contantDetailsState extends State<contantDetails> {
                             TextButton(onPressed: ()=> Navigator.of(context).pop(), child: Text('Clean' ,style:TextStyle(color: Colors.grey[600] ,fontSize: 18))),
                             TextButton(onPressed: () {
                                 setState(() {
+                                  editedContact.name = nameController.text;
+                                  editedContact.number = numberController.text;
+                                  editedContact.imgUrl = imgUrlController.text;
                                   contactHelper.instance.updateContact(editedContact);
                                   Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(BuildContext context) => const home()));
                                   print(editedContact.id);
